@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "628d0a6b6ae0137445e33909c5c455e3",
+    "content-hash": "884f04cf56d15b7b49b827431aa14eb5",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -115,28 +115,29 @@
         },
         {
             "name": "dvdoug/boxpacker",
-            "version": "2.7.1",
+            "version": "3.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dvdoug/BoxPacker.git",
-                "reference": "aafbef34927ea249e65c8d014e329a34bbe28038"
+                "reference": "43a42412932404c2e3b2d15b85647486c3367464"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dvdoug/BoxPacker/zipball/aafbef34927ea249e65c8d014e329a34bbe28038",
-                "reference": "aafbef34927ea249e65c8d014e329a34bbe28038",
+                "url": "https://api.github.com/repos/dvdoug/BoxPacker/zipball/43a42412932404c2e3b2d15b85647486c3367464",
+                "reference": "43a42412932404c2e3b2d15b85647486c3367464",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "php": ">=5.4.0",
-                "psr/log": "^1.0"
+                "php": "^7.1||^8.0",
+                "psr/log": "^1.0||^2.0||^3.0"
             },
             "require-dev": {
-                "behat/behat": "^3.5",
-                "dvdoug/behat-code-coverage": "^3.0||^4.0",
-                "monolog/monolog": "^1.25||^2.0",
-                "phpunit/phpunit": "^4.8.36||^5.7.27||^6.5.14||^7.5.20||^8.5.2||^9.0"
+                "behat/behat": "^3.7",
+                "dvdoug/behat-code-coverage": "^5.0.1",
+                "friendsofphp/php-cs-fixer": "^3.7",
+                "monolog/monolog": "^1.0||^2.0",
+                "phpunit/phpunit": "^7.5.20||^8.5.21||^9.5.8"
             },
             "type": "library",
             "autoload": {
@@ -173,7 +174,7 @@
             ],
             "support": {
                 "issues": "https://github.com/dvdoug/BoxPacker/issues",
-                "source": "https://github.com/dvdoug/BoxPacker/tree/2.x"
+                "source": "https://github.com/dvdoug/BoxPacker/tree/3.10.0"
             },
             "funding": [
                 {
@@ -181,7 +182,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-06-11T21:02:04+00:00"
+            "time": "2022-09-10T19:38:53+00:00"
         },
         {
             "name": "erusev/parsedown",

@@ -11,6 +11,9 @@
 |
 */
 
+use App\Http\Controllers\PalletController;
+
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/pallet','PalletController@index');
