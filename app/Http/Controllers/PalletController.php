@@ -39,7 +39,6 @@ class PalletController extends Controller
     }
 
     function get_required_boxes ($max_box, $items) {
-        $array = array();
         $packer = new Packer();
 
         $packer->addBox(new TestBox('max_box', $max_box[0], $max_box[1], $max_box[2], 0, $max_box[0], $max_box[1], $max_box[2], $max_box[3]));
@@ -50,8 +49,10 @@ class PalletController extends Controller
         
         try {
             $packed_pallets = $packer->pack();
+            $boxArray = array();
             foreach ($packed_pallets as $packed_pallet) {
                 $packed_box = $packed_pallet->getBox();
+                $array = array();
                 array_push($array, array(
                 "maxbox" => array(
                     "name" => $packed_box->getReference(),
@@ -64,13 +65,13 @@ class PalletController extends Controller
                 echo "The combined weight of this box and the items inside it is {$packed_box->getMaxWeight()}g" . PHP_EOL;
                 echo "The items in this box are:" . PHP_EOL;
                 $packed_items = $packed_pallet->getItems();
-                $arr = array();
+                $itemsArray = array();
                 foreach ($packed_items as $packed_item) {
-                    array_push($arr, array(
+                    array_push($itemsArray, array(
                         "name" => $packed_item->getItem()->getDescription(),
-                        "width" => $packed_item->getWidth(),
-                        "length" => $packed_item->getLength(),
-                        "depth" => $packed_item->getDepth(),
+                        "width" => $packed_item->getItem()->getWidth(),
+                        "length" => $packed_item->getItem()->getLength(),
+                        "depth" => $packed_item->getItem()->getDepth(),
                         "weight" => $packed_item->getItem()->getWeight(),
                         "X" => $packed_item->getX(),
                         "Y" => $packed_item->getY(),
@@ -81,9 +82,10 @@ class PalletController extends Controller
                     echo 'l' . $packed_item->getLength() . ', w' . $packed_item->getWidth() . ', d' . $packed_item->getDepth();
                     echo PHP_EOL;
                 }
-                array_push($array, array("items" => $arr));
-                dd($array);
+                array_push($array, array("items" => $itemsArray));
+                array_push($boxArray, $array);
             }
+            dd($boxArray);
             return $packed_pallets;
         } catch (Exception $e   ) {
             dd($e);
